@@ -9,27 +9,14 @@ import java.util.Collection;
 @Setter
 public class JwtResponse {
     private String token;
-    private String type = "Bearer";
-    private String username;
-    private Collection<? extends GrantedAuthority> authorities;
+    private Double user_id;
 
-    public JwtResponse(String accessToken, String username, Collection<? extends GrantedAuthority> authorities) {
+    public JwtResponse(String accessToken, Double user_id) {
         this.token = accessToken;
-        this.username = username;
-        this.authorities = authorities;
-    }
-    public JwtResponse(String accessToken) {
-        this.token = accessToken;
+        this.user_id=user_id;
 
     }
 
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
-
-    }
 }

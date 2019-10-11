@@ -4,6 +4,7 @@ package com.mortgage.mortgage.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -17,19 +18,12 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long user_id;
-
-
-    //@NaturalId
+    private Double userId;
     private String name;
-
-
     private String email;
-
-
     private String password;
+    private Double amount;
+    private Double accountNo;
 
 
     // @ManyToOne(optional = false, fetch = FetchType.EAGER, targetEntity = Role.class)

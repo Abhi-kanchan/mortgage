@@ -13,7 +13,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -26,8 +28,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String arg0)
             throws UsernameNotFoundException {
+
         final User loggedUser = userService.findByName(arg0);
-        if (loggedUser == null) {
+       Optional<User> user=Optional.ofNullable(loggedUser);
+        if (!user.isPresent()) {
             throw new UsernameNotFoundException("No user found with name " + loggedUser);
         }
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils

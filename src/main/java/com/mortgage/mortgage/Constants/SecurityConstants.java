@@ -9,6 +9,6 @@ public class SecurityConstants {
     public static final String TOKEN_PREFIX = "Bearer ";
     public static final String HEADER_STRING = "Authorization";
     public static final String SIGN_UP_URL = "/mortgageapp/api/register";
-    public static final String URI= "/auth/**";
+   // public static final String URI= "/auth/**";
 
 }

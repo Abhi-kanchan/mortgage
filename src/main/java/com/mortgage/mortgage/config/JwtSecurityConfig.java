@@ -1,6 +1,5 @@
 package com.mortgage.mortgage.config;
 
-import com.mortgage.mortgage.Constants.SecurityConstants;
 import com.mortgage.mortgage.impl.UserDetailsServiceImpl;
 import com.mortgage.mortgage.security.JWTAuthenticationFilter;
 import com.mortgage.mortgage.security.JwtAuthorization;
@@ -16,7 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import static com.mortgage.mortgage.Constants.SecurityConstants.SIGN_UP_URL;
-import static com.mortgage.mortgage.Constants.SecurityConstants.URI;
 
 
 @EnableWebSecurity
