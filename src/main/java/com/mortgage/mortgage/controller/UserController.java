@@ -52,7 +52,7 @@ public class UserController {
         return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
     }
 
-    @PostMapping//("/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(user.getName(), user.getPassword(), new ArrayList<>()));
